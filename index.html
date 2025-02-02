@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Single page application</title>
+</head>
+<body>
+    <div class="col-12 px-0">   
+        <nav >
+            <div class="nav_cont" >
+                    <img src="home_icon.svg" href="index.html" id="logo"> 
+                    <img src="user.svg" href="index.html" id="user_logo"> 
+                </div>
+        </nav>
+        <img src="homePage.jpg" id="homePic" class="col-12 px-0">
+        <div id="img_txt" class="col-12 px-0" >Welcome to Our City Guide</div>
+
+        <div class="form-container">
+                    <!-- Log in form -->
+            <form class="login-form" id="loginForm" onsubmit="handleLogin(event)">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="userRole">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div class="d-flex flex-column">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="button" class="btn btn-secondary" onclick="toggleForms()">Sign up</button>
+                </div>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form class="sign-up-form" id="signUpForm" style="display:none" onsubmit="handleSignUp(event)">
+                <h2>Sign Up</h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email address" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Create Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Confirm Password" required>
+                </div>
+                <div class="d-flex flex-column">
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <button type="button" class="btn btn-secondary" onclick="toggleForms()">Login</button>
+                </div>
+            </form>
+        </div>
+        
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

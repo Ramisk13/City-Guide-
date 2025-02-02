@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Admin</title>
+</head>
+<body>
+<div id="admin-page" class="col-12 px-0">
+    <nav >
+        <div class="nav_cont" >
+                <img src="home_icon.svg" href="index.html" id="logo"> 
+                <img src="user.svg" href="index.html" id="user_logo" href="index.html" > 
+            </div>
+    </nav>
+    <img src="night-city1.jpg" id="admin-img">
+    <div id="admin_img_txt" class="col-12 px-0" >Admin Control Center <br> Where City Guides Come to Life!</div>
+    <div class="city-management">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Add City</h3>
+                    <form id="addCityForm">
+                        <select class="form-control mb-2" id="countrySelector" required>
+                            <option value="lebanon">Lebanon</option>
+                            <option value="france">France</option>
+                            <option value="turkey">Turkey</option>
+                            <option value="cyprus">Cyprus</option>
+                            <option value="switzerland">Switzerland</option>
+                            <option value="england">England</option>
+                        </select>
+                        <input type="text" class="form-control mb-2" placeholder="City Name" required>
+                        <textarea class="form-control mb-2" placeholder="Description" required></textarea>
+                        <input type="text" class="form-control mb-2" placeholder="Image URL" required>
+                        <button type="submit" class="btn btn-success">Add City</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h3>Delete City</h3>
+                    <form id="deleteCityForm">
+                        <select class="form-control mb-2" id="deleteCountrySelector" required>
+                            <option value="">Select Country</option>
+                            <option value="lebanon">Lebanon</option>
+                            <option value="france">France</option>
+                            <option value="turkey">Turkey</option>
+                            <option value="cyprus">Cyprus</option>
+                            <option value="switzerland">Switzerland</option>
+                            <option value="england">England</option>
+                        </select>
+                        <select class="form-control mb-2" id="deleteCitySelect" required>
+                            <!-- Options will dynamically start to appear here -->
+                        </select>
+                        <button type="submit" class="btn btn-danger">Delete City</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h3>Update City</h3>
+                    <form id="updateCityForm">
+                        <select class="form-control mb-2" id="updateCountrySelector" required>
+                            <option value="">Select Country</option>
+                            <option value="lebanon">Lebanon</option>
+                            <option value="france">France</option>
+                            <option value="turkey">Turkey</option>
+                            <option value="cyprus">Cyprus</option>
+                            <option value="switzerland">Switzerland</option>
+                            <option value="england">England</option>
+                        </select>
+                        <select class="form-control mb-2" id="updateCitySelect" >
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                        <input type="text" class="form-control mb-2" placeholder="New City Name">
+                        <textarea class="form-control mb-2" placeholder="New Description"></textarea>
+                        <input type="text" class="form-control mb-2" placeholder="New Image URL">
+                        <button type="submit" class="btn btn-primary">Update City</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+    
+    
+
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>

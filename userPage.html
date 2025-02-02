@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>User Page - Lebanon City Guides</title>
+</head>
+<body>
+<div id="user-page" class="col-12 px-0">
+    <nav>
+        <div class="nav_cont">
+            <a href="index.html"><img src="home_icon.svg" id="logo"></a>
+            <a href="index.html"><img src="user.svg" id="user_logo"></a>
+        </div>
+    </nav>
+    <img src="night-pic3.jpg" id="user-img">
+    <div id="user_img_txt" class="col-12 px-0">Welcome to Our City Guides<br>Your Gateway to Explore the World</div>
+      <div id="about-us" class="text-center mt-4 px-3">
+        <h2>About Our City Guides</h2>
+        <p>Explore the world with our detailed city guides. Discover local secrets, cultural highlights, and everything you need to know to navigate new cities like a local. Our mission is to provide comprehensive, up-to-date information that enhances your travel experience.</p>
+    </div>
+
+    
+    <div class="country-select-container text-center my-4">
+        <label for="countrySelect" class="form-label h4">Select a Country to Explore:</label>
+        <select id="countrySelect" class="form-select form-select-lg mb-3">
+            <option value="">Choose a Country</option>
+            <option value="lebanon">Lebanon</option>
+            <option value="france">France</option>
+            <option value="turkey">Turkey</option>
+            <option value="cyprus">Cyprus</option>
+            <option value="switzerland">Switzerland</option>
+            <option value="england">England</option>
+        </select>
+    </div>
+</div>
+<script>
+    document.getElementById('countrySelect').addEventListener('change', function() {
+        var selectedCountry = this.value;
+        var welcomeMessageDiv = document.getElementById('welcome-message');
+        if (!welcomeMessageDiv) {
+            welcomeMessageDiv = document.createElement('div');
+            welcomeMessageDiv.id = 'welcome-message';
+            welcomeMessageDiv.className = 'welcome-message';
+            document.getElementById('user-page').appendChild(welcomeMessageDiv);
+        }
+        switch (selectedCountry) {
+            case 'lebanon':
+                welcomeMessageDiv.innerHTML = '<h2>Welcome to Lebanon!</h2><p>Explore the vibrant streets, beautiful landscapes, and rich history of Lebanon.</p>';
+                break;
+            case 'france':
+                welcomeMessageDiv.innerHTML = '<h2>Welcome to France!</h2><p>Discover the romantic streets of Paris, the lush wine regions, and stunning coastlines.</p>';
+                break;
+            case 'turkey':
+                welcomeMessageDiv.innerHTML = '<h2>Welcome to Turkey!</h2><p>Journey through the crossroads of cultures and continents in the heart of Eurasia.</p>';
+                break;
+            case 'cyprus':
+                welcomeMessageDiv.innerHTML = '<h2>Welcome to Cyprus!</h2><p>Enjoy the stunning Mediterranean beaches and delve into ancient ruins.</p>';
+                break;
+            case 'switzerland':
+                welcomeMessageDiv.innerHTML = '<h2>Welcome to Switzerland!</h2><p>Explore the breathtaking Alps, pristine lakes, and world-class chocolates.</p>';
+                break;
+            case 'england':
+                welcomeMessageDiv.innerHTML = '<h2>Welcome to England!</h2><p>Walk through the historic cities, green landscapes, and vibrant culture.</p>';
+                break;
+            default:
+                welcomeMessageDiv.innerHTML = '';
+        }
+        if (selectedCountry) {
+        document.getElementById('search-container').style.display = 'block'; 
+        displayCities(selectedCountry); 
+    } else {
+        document.getElementById('search-container').style.display = 'none'; 
+    }
+});
+    
+    </script>
+<div class="search-container text-center my-4">
+    <input type="text" id="citySearch" placeholder="Search for a city..." class="form-control">
+    <button onclick="searchCity()" class="btn btn-primary mt-2">Search</button>
+</div>
+
+<div id="city-blocks-container" class="row text-center mt-4">
+    <!-- Dynamically populated city blocks will go here -->
+</div>
+<script>
+    document.getElementById('countrySelect').addEventListener('change', function() {
+    var selectedCountry = this.value;
+    displayCities(selectedCountry);
+});
+
+function displayCities(country, searchQuery = '') {
+    var cities = JSON.parse(localStorage.getItem('cities')) || {};
+    var cityBlocksContainer = document.getElementById('city-blocks-container');
+    cityBlocksContainer.innerHTML = ''; // Clear previous cities
+
+    var cityImages = cities[country] || [];
+    cityImages = cityImages.filter(city => city.name.toLowerCase().includes(searchQuery.toLowerCase())); // Filter based on search query
+
+    cityImages.forEach(function(city) {
+        var col = document.createElement('div');
+        col.className = 'col-md-4 col-sm-6 city-block';
+        
+        var img = document.createElement('img');
+        img.src = city.image; // Use the image URL from local storage
+        img.alt = city.name;
+        img.className = 'img-fluid rounded';
+        
+        var cityInfo = document.createElement('div');
+        cityInfo.className = 'city-info';
+        cityInfo.innerHTML = `<strong>${city.name}</strong><br>${city.description || 'Explore this beautiful city!'}`;
+
+        col.appendChild(img);
+        col.appendChild(cityInfo);
+        cityBlocksContainer.appendChild(col);
+    });
+}
+function searchCity() {
+    var searchQuery = document.getElementById('citySearch').value;
+    var selectedCountry = document.getElementById('countrySelect').value;
+    displayCities(selectedCountry, searchQuery);
+}
+
+document.getElementById('countrySelect').addEventListener('change', function() {
+    var selectedCountry = this.value;
+    displayCities(selectedCountry);
+});
+    </script>
+    
+</body>
+</html>
+    
+    
+    
+
+    

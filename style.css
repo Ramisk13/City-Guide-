@@ -1,0 +1,434 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #1b2838; 
+
+}
+
+
+#logo {
+    height: 65px;
+    
+   
+    
+}
+
+#user_logo {
+    height: 65px;
+   
+}
+
+
+nav {
+    background-color: rgba(3, 17, 34, 0.85); 
+    color: #f5f5f5; 
+    background-size: contain;
+    margin: 0;
+    padding: 0.3%;
+}
+
+
+
+.nav_cont {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding-left: 1%; 
+    padding-right: 1%;
+   
+}
+
+
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+.sign-up-form {
+    position: absolute;
+    top: 40%;
+    left: 36%;
+    width: 500px; 
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.login-form {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8); 
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.login-form button {
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+.sign-up-form button {
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+#login {
+    margin-left: 135px;
+    padding-bottom: 2%;
+
+
+}
+
+
+#homePic {
+    height: 877px; 
+    display: block;
+}
+
+#img_txt {
+    position: absolute;
+    top: 20%; 
+    left: 50%;
+    
+    font-size: 70px;
+    color: white;
+    width: 50% ;
+    text-align: center;
+    opacity: 0.8;
+    animation: pulse 3s infinite;
+}
+
+
+
+
+
+
+
+/* admin page */
+
+
+
+#admin-img {
+    width: 100% ;
+    height: 878px;
+    display: block;
+}
+
+#admin_img_txt {
+    position: absolute;
+    top: 16%; 
+    left: 24%;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: white;
+    width: 50% ;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.city-management h3 {
+    color: #ccc; 
+}
+
+
+.city-management form {
+    background-color: #2a394f; 
+    color: #ffffff; 
+    border: 1px solid #3f5765; 
+}
+
+
+.city-management input[type="text"],
+.city-management textarea,
+.city-management select {
+    background-color: #2e4053; 
+    color: #fff; 
+    border: 1px solid #475a6e; 
+}
+
+
+.city-management button:hover {
+    opacity: 0.85;
+    background-color: #4a657f; 
+}
+
+
+.btn-success {
+    background-color: #4CAF50;
+}
+
+.btn-danger {
+    background-color: #f44336;
+}
+
+.btn-primary {
+    background-color: #337ab7;
+}
+
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+    color: #ccc; 
+}
+
+
+@media (max-width: 768px) {
+    .city-management .col-md-4 {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* user page */
+
+
+#user-img {
+    width: 100% ;
+    height: 878px;
+    display: block;
+
+
+}
+
+
+#user_img_txt {
+    position: absolute;
+    top: 16%; 
+    left: 24%;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: white;
+    width: 50% ;
+    text-align: center;
+    opacity: 0.8;
+    color: #f0f0f0; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+#about-us, .country-select-container {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 90%; 
+    background: #34495e; 
+    color: #ecf0f1; 
+    border: 1px solid #2c3e50;
+}
+
+.country-select-container {
+    background-color: #2c3e50; 
+    border: none; 
+}
+
+.form-select {
+    display: block;
+    width: 100%; 
+    padding: 0.75rem 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: #435a6f; 
+    color: #ffffff; 
+    border-radius: 4px; 
+}
+
+@media (max-width: 768px) {
+    #user_img_txt {
+        font-size: 5vw; 
+        top: 20%; 
+    }
+}
+
+@media (max-width: 480px) {
+    #user_img_txt {
+        font-size: 6vw; 
+        padding: 10px; 
+    }
+}
+
+.form-select:hover {
+    background-color: #556c80; 
+}
+
+.form-select:focus {
+    border-color: #556c80;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); 
+}
+
+
+.form-select-lg.mb-3 {
+    height: calc(2.875rem + 2px);
+    padding: 0.5rem 1rem;
+}
+.button, button {
+    background-color: #4CAF50; 
+    color: #ffffff; 
+}
+
+.button:hover, button:hover {
+    background-color: #369636; 
+}
+
+.button-red { background-color: #e74c3c; } 
+.button-blue { background-color: #3498db; }
+
+
+h1, h2, h3, h4, p {
+    color: #ddd; 
+}
+
+
+.welcome-message {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    
+    border-radius: 8px;
+    box-shadow: 
+0 2px 5px rgba(0, 0, 0, 0.1);
+text-align: center;
+background-color: #435a6f; 
+    
+    border-radius: 4px;
+}
+
+.welcome-message h2 {
+    color: #ecf0f1;}
+
+.welcome-message p {
+    color: #ecf0f1;font-size: 18px;
+}
+.city-block img {
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    cursor: pointer; 
+}
+
+.city-block:hover img {
+    transform: scale(1.05);
+    opacity: 0.8; 
+}
+
+.city-block {
+    position: relative;
+    overflow: hidden;
+    margin: 15px;
+}
+
+.city-block img {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.city-block:hover img {
+    transform: translateY(-10px);
+    opacity: 0.7;
+}
+
+.city-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.city-block:hover .city-info {
+    transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+    .city-block {
+        margin-bottom: 20px;
+    }
+}
+
+h1, h2, h3, h4, p {
+    color: #ddd; 
+}
+
+
+
+.search-container input,
+.search-container button {
+    width: 300px; 
+    margin: auto; 
+}
+
+.search-container button {
+    width: 150px; 
+    margin-top: 10px; 
+}
+
+
+
+.city-details-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-top: 20px;
+    display: none; 
+}
+
+.city-description, .city-carousel {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.city-description h3 {
+    margin-top: 0;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
